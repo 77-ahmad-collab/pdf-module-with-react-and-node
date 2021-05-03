@@ -66,6 +66,18 @@ function App() {
       />
       <br />
       <button onClick={handleSubmit}>Generate an download</button>
+      <br></br>
+      <input type="text" placeholder="mailer" />
+      <button
+        onClick={async () => {
+          await axios
+            .post("/mail", { name: "aslam" })
+            .then((res) => console.log(res));
+        }}
+      >
+        {" "}
+        Send mail
+      </button>
     </div>
   );
 }
